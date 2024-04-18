@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FD intrest rate calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h2>FD Intrest Rate Calculator</h2>
+        <div class="input">
+            <input type="text" id="input" placeholder="Tenature Months">
+        </div>
+        <div>
+            <button type="submit" onclick="fdrate()">Calculate</button>
+        </div>
+        <div id="result">
+    
+        </div>
+        </div>
+        <script>
+            function fdrate()
+            {
+            const months = Number(document.getElementById("input").value)
+            let rate=0
+            
+            if (months<3)
+                rate=5.8
+            else if (months>=3 && months<=6)
+                rate=7.4
+            else if  (months>6 && months <= 9)
+                rate=8.8
+            else
+                rate=9.5
+
+            let result= document.querySelector( "#result")
+            result.innerHTML=`The FD interest  rate for ${months} month is: ${rate}%`
+          }
+        </script>
+</body>
+</html>

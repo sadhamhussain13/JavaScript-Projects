@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Palindrome Checker</h2>
+        <div class="input">
+            <textarea rows="5" cols="38" id="input" placeholder="Enter a sentence"></textarea><br />
+            <!-- <input type="text" area="textbox" id="input" placeholder="Enter a sentence"> -->
+        </div>
+        <div>
+            <button type="submit" onclick="check()">CHECK</button>
+        </div>
+        <div id="result">
+    
+        </div>
+        </div>
+        <script>
+        function check() {
+        const str = document.getElementById("input").value.trim().toLowerCase().replace(/\s/g, ''); // Trim, lowercase, and remove spaces
+        // const strWithoutSpaces = str.split(' ').join(''); // Remove spaces from string instead use .replace(/\s/g, '')
+        const reversedStr = str.split('').reverse().join(''); // Reverse the string
+        let result = document.getElementById("result");
+
+        if (str === reversedStr) {
+            result.innerHTML = `Your sentence is a palindrome`;
+        } else {
+            result.innerHTML = `Your sentence is not a palindrome`;
+        }
+    }
+
+        </script>
+</body>
+</html>
